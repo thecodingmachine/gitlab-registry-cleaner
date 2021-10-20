@@ -15,13 +15,13 @@ PROJECT=${LASTPART%%:*}
 # Check parameter passed starts with REGISTRY_URL
 [[ ! $1 == $CI_REGISTRY_IMAGE* ]] && echo "The image full path should start with $CI_REGISTRY_IMAGE" && exit 1
 
-[ -z "$CI_ACCOUNT" ] && echo "You need to set the CI_ACCOUNT environment variable to '[user]:[password]' where user is a valid Gitlab user that has access to the Gitlab image you want to delete." && exit 1;
+[ -z "$CI_ACCOUNT_LONG" ] && echo "You need to set the CI_ACCOUNT_LONG environment variable to '[user]:[password]' where user is a valid Gitlab user that has access to the Gitlab image you want to delete." && exit 1;
 
 GITLAB_URL=$(echo $CI_PROJECT_URL | awk -F/ '{print $1"//"$3}')
 
 # Authenticates with Gitlab Registry
 # CI_ACCOUNT env var should contain "login:password" of a user that has access to repository
-TOKEN=$(curl -s -u "$CI_ACCOUNT" "${GITLAB_URL}/jwt/auth?client_id=docker&offline_token=true&service=container_registry&scope=repository:${PROJECT}:pull,*" | sed -r "s/(\{\"token\":\"|\"\})//g")
+TOKEN=$(curl -s -u "$CI_ACCOUNT_LONG" "${GITLAB_URL}/jwt/auth?client_id=docker&offline_token=true&service=container_registry&scope=repository:${PROJECT}:pull,*" | sed -r "s/(\{\"token\":\"|\"\})//g")
 #echo $TOKEN
 
 # Obtain digest from tag name
