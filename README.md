@@ -7,7 +7,7 @@ This image provides a simple script that enables you to delete images easily.
 ---
 📌 **Deprecation Notice**
 
-This repository is deprecated and no more work will be done on this by The Coding Machine. You can use instead [reg tool](https://docs.gitlab.com/ee/api/container_registry.html#delete-a-registry-repository-tag) or [gitlab api](https://docs.gitlab.com/ee/api/container_registry.html#delete-a-registry-repository-tag) for same usage. 
+This repository is deprecated and no more work will be done on this by The Coding Machine. You can use instead [reg tool](https://docs.gitlab.com/ee/user/packages/container_registry/#delete-images-using-gitlab-cicd) or [gitlab api](https://docs.gitlab.com/ee/api/container_registry.html#delete-a-registry-repository-tag) for same usage. 
 
 ---
 
