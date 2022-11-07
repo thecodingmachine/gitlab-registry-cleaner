@@ -3,7 +3,15 @@
 Out of the box, there is no easy way to delete a special tag of a given image in the Gitlab registry (as of version 10.8).
 
 This image provides a simple script that enables you to delete images easily.
- 
+
+---
+📌 **Deprecation Notice**
+
+This repository is deprecated and no more work will be done on this by The Coding Machine. You can use instead [reg tool](https://docs.gitlab.com/ee/api/container_registry.html#delete-a-registry-repository-tag) or [gitlab api](https://docs.gitlab.com/ee/api/container_registry.html#delete-a-registry-repository-tag) for same usage. 
+
+---
+
+
 ## Why?
 
 If you want to do continuous deployment, it is not uncommon to build one image per pipeline in Gitlab. You will typically
